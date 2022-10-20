@@ -5,7 +5,6 @@ _movie_repo = None
 
 def get_movie_repository():
     global _movie_repo
-
     class MovieRepository:
         """In memory database which is a simple list of movies"""
 

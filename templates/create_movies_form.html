@@ -3,7 +3,22 @@
 {% block title %}Movie Rating App | Create Movie Rating{% endblock %}
 
 {% block body %}
-<h1 class="mb-5">Create Movie Rating</h1>
-<p class="mb-3">Create a movie rating below</p>
-<!-- TODO: Feature 2 -->
+<h1 class="mb-4">Create Movie Rating</h1>
+
+<form action="/movies" method="post">
+    
+    <label class="form-label" for="movie_name">Movie Name</label>
+    <input class="form-control mb-2" type="text" name="movie_name" autocomplete="off" placeholder="Enter the name of the movie" required>
+    <label class="form-label" for="director_name">Director Name</label>
+    <input class="form-control mb-2" type="text" name="director_name" autocomplete="off" placeholder="Enter the name of the Direction" required>
+    <label class="form-label" for="rating">Movie Rating</label>
+    <input class="form-control mb-2" type="number" min="1" max="5" name="movie_rating" autocomplete="off" placeholder="Enter your rating" required>
+    
+    
+
+    <button class="btn btn-primary mt-3" type="submit">Save Order</button>
+</form>
+
+
+
 {% endblock %}
