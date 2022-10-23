@@ -5,5 +5,25 @@
 {% block body %}
 <h1 class="mb-5">All Movies</h1>
 <p class="mb-3">See our list of movie ratings below</p>
-<!-- TODO: Feature 1 -->
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Movie</th>
+        <th scope="col">Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+{%for key, value in movie_rating.items() %}
+      <tr>
+        <td>{{key}}</td> <!-- from https://stackoverflow.com/questions/14652325/python-dictionary-in-to-html-table -->
+        <td>{{value}}</td>
+        <td><form action="{{ key }}" method=post class=delete-registration>
+            <input type=hidden value="{{ key }}"name=delete />
+            <input type=submit value="delete" class="btn btn-danger"/>
+          </form></td>
+      </tr>
+{%endfor%} 
+</table>
 {% endblock %}

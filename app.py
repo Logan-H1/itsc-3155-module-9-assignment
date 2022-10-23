@@ -16,6 +16,14 @@ def index():
 @app.get('/movies')
 def list_all_movies():
     # TODO: Feature 1
+    movie = request.form.get('move_name', type=str)
+    rating = request.form.get('rating', type=int)
+
+    movie_rating = {}
+    movie_rating[movie] = rating
+
+    return render_template('list_all_movies.html', movie_rating=movie_rating)
+
     return render_template('list_all_movies.html', list_movies_active=True)
 
 
