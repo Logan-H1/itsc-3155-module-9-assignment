@@ -21,10 +21,10 @@ def list_all_movies():
 
     movie_rating = {}
     movie_rating[movie] = rating
+    if movie_rating == ():
+        return render_template('no_movies_listed.html')
 
     return render_template('list_all_movies.html', movie_rating=movie_rating)
-
-    return render_template('list_all_movies.html', list_movies_active=True)
 
 
 @app.get('/movies/new')
