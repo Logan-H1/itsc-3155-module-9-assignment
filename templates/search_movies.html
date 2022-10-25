@@ -6,4 +6,29 @@
 <h1 class="mb-5">Search Movie Ratings</h1>
 <p class="mb-3">Search for a movie rating below</p>
 <!-- TODO: Feature 3 -->
+<form action="/movies/search" method="post">
+    
+    <label class="form-label" for="movie_name">Movie Name</label>
+    <input class="form-control mb-2" type="text" name="movie_name" autocomplete="off" placeholder="Enter the name of the movie" required>
+
+    <button class="btn btn-primary mt-3" type="submit">Search</button>
+</form>
+{% if movie_title != None%}
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Movie</th>
+            <th scope="col">Director</th>
+            <th scope="col">Rating</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{movie_title.title}}</td>
+            <td>{{movie_title.director}}</td>
+            <td>{{movie_title.rating}}</td>
+        </tr>
+    </table>
+{%else%}
+{%endif%}
 {% endblock %}
