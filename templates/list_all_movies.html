@@ -10,19 +10,17 @@
     <thead>
       <tr>
         <th scope="col">Movie</th>
+        <th scope="col">Director</th>
         <th scope="col">Rating</th>
       </tr>
     </thead>
     <tbody>
     
-{%for key, value in movie_rating.items() %}
+{%for movie in movies %}
       <tr>
-        <td>{{key}}</td> <!-- from https://stackoverflow.com/questions/14652325/python-dictionary-in-to-html-table -->
-        <td>{{value}}</td>
-        <td><form action="{{ key }}" method=post class=delete-registration>
-            <input type=hidden value="{{ key }}"name=delete />
-            <input type=submit value="delete" class="btn btn-danger"/>
-          </form></td>
+        <td>{{movie.title}}</td>
+        <td>{{movie.director}}</td>
+        <td>{{movie.rating}}</td>
       </tr>
 {%endfor%} 
 </table>
